@@ -49,21 +49,23 @@ class Guru extends CI_Controller
         $this->load->view('guru/video_list', $data);
     }
 
-    public function addComment() {
-        // Memproses penambahan komentar
-        if ($this->input->post('submit')) {
-            $classId = $this->input->post('classId');
-            $commentData = array(
-                'class_id' => $classId,
-                'comment' => $this->input->post('comment')
-            );
-            $this->load->model('Comments_model');
-            $this->Comments_model->addComment($commentData);
-        }
-
-        // Redirect ke halaman video_list setelah penambahan komentar
-        redirect('guru/viewVideoList/' . $classId);
-    }
+	public function addComment() {
+		// Mengambil data yang dikirim melalui form
+		$classId = $this->input->post('classId');
+		$comment = $this->input->post('comment');
+	
+		// Memuat model Comments_model
+		$this->load->model('Comments_model');
+	
+		// Menyimpan komentar ke database
+		$data = array(
+			'comment' => $comment
+		);
+		$this->Comments_model->addComment($data);
+	
+		// Redirect kembali ke halaman video_list
+		redirect('guru/showVideo/' . $classId);
+	}
     public function add_materi()
 
     {
