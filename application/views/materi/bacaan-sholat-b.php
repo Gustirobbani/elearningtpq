@@ -59,7 +59,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, Santri</a>
+                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, <?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?></a>
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user') ?>">Beranda</a>
                             </li>
@@ -83,7 +87,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                         akan
                         kamu pelajari !
                     </h1>
-                    <h4 data-aos="fade-down" data-aos-duration="1700">Gusti robbani - TPQ Muslimat Al-Quthubi</h4>
+                    <h4 data-aos="fade-down" data-aos-duration="1700"><?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?> - TPQ Muslimat Al-Quthubi</h4>
                     <p>Materi Bacaan Sholat Kelas B</p>
                     <hr width="80%">
                     <p data-aos="fade-down" class="font-weight-bold" data-aos-duration="1800">Silahkan pilih materi

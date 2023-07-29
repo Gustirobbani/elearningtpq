@@ -31,21 +31,20 @@
 
 <h2 id="tentang">👨🏻‍🏫 Tentang Learnify</h2>
 
-Website edukasi yang dibuat dalam rangka mengatasi solusi pembelajaran kala pandemi, learnify dibuat agar para siswa dan guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
+Website edukasi yang dibuat dalam rangka mengatasi solusi pembelajaran tpq muslimat al-quthubi, learnify dibuat agar para santri dan ustadz dapat terus belajar dan mengajar dimana saja dan kapan saja.
 
 <p></p>
 
 <h2 id="fitur">✨ Fitur Tersedia</h2>
 
 - Autentikasi
-  - Login siswa, guru dan admin
-  - Daftar sebagai siswa dan guru
+  - Login santri, ustadz dan admin
+  - Daftar sebagai santri dan ustadz
 - Data Management
   - Pengguna [akses video pembelajaran dan memberi comment juga reaksi]
   - Guru [upload materi berdasarkan kelas dan mata pelajaran]
-  - Admin [mengatur data siswa, guru sekaligus materi]
+  - Admin [mengatur data santri, ustadz sekaligus materi]
 - Diskusi dan Reaksi Dengan Integrasi Disqus
-- Ujian Online [segera hadir]
 
 <p></p>
 
@@ -53,7 +52,7 @@ Website edukasi yang dibuat dalam rangka mengatasi solusi pembelajaran kala pand
 
 Halaman demo untuk sementara tidak ada dikarenakan layanan hosting yang tidak tersedia untuk deploy aplikasi ini, kalian dapat mendownload aplikasi ini lalu menjalankan secara local di komputer anda.
 
-Update: anda dapat mengakses di http://programmer.smkn1ciamis.id/learnify/ namun tolong berikan issues jika website tersebut tidak berjalan
+Update: anda dapat mengakses namun tolong berikan issues jika website tersebut tidak berjalan
 
 <p></p>
 
@@ -64,8 +63,8 @@ Berikut adalah daftar akun untuk keperluan testing saat anda mencoba aplikasi pe
 | Role  | Email                  | Password | URL                                     |
 | ----- | ---------------------- | -------- | --------------------------------------- |
 | Admin | admin@gmail.com        | admin    | http://localhost/learnify/welcome/admin |
-| Siswa | zaidanline67@gmail.com | 123456   | http://localhost/learnify/welcome       |
-| Guru  | zaidanline67@gmail.com | 123456   | http://localhost/learnify/welcome/guru  |
+| Siswa | fairul@gmail.com       | 123456   | http://localhost/learnify/welcome       |
+| Guru  | diponegoro77@gmail.com | 123456   | http://localhost/learnify/welcome/guru  |
 
 <p></p>
 
@@ -86,8 +85,7 @@ Untuk menjalankan aplikasi atau web ini kamu harus install XAMPP dan mempunyai s
 
 ```bash
 # Clone repository ini atau download di
-$ git clone https://github.com/syauqi/learnify.git
-
+$ git clone https://github.com/gustirobbani/e-learning.git
 # Buat database
 Buat database dengan nama "learnify" di DMBS [phpmyadmin, dll]
 
@@ -108,7 +106,7 @@ Kalian bisa mendukung saya di platform trakteer! Dukungan kalian akan sangat mem
 
 <p></p>
 
-<a href="https://trakteer.id/syaufy" target="_blank"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-red-5.png" height="40" style="border:0px;height:40px;" alt="Trakteer Saya"></a>
+<a href="https://trakteer.id/gustirobbani" target="_blank"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-red-5.png" height="40" style="border:0px;height:40px;" alt="Trakteer Saya"></a>
 
 <p></p>
 
@@ -122,9 +120,9 @@ Berhubung Project ini saya selesaikan sendiri, namun banyak fitur dan banyak hal
 
 <h2 id="lisensi">📝 Lisensi</h2>
 
-- Copyright © 2022 SYAUQIZAIDAN KHAIRAN KHALAF
+- Copyright © 2022 GUSTI ROBBANI
 - Learnify adalah aplikasi web open-source yang berlisensi dibawah lisensi MIT
 
 ---
 
-**<p align="center">Made with ❤️ by SYAUQIZAIDAN KHAIRAN KHALAF</p>**
+**<p align="center">Made with ❤️ by GUSTI ROBBANI</p>**

@@ -52,14 +52,14 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                 <div class="single-footer-widget tp_widgets">
                     <h6 class="footer_title">Tentang Developer</h6>
                     <ul class="list">
-                        <li>Web Developer yang perfeksionis dengan loper dan Web Designer. Memiliki kemampuan komunikasi tertulis dan lisan yang sangat baik; mampu menjelaskan masalah perangkat lunak yang kompleks dengan istilah yang mudah dimengerti</li>
+                        <li>Saya adalah mahasiswa tingkat akhir yang di beri kehormatan untuk membuatkan webiste untuk anak-anak tpq yang saya harapkan dapat mencetak generasi bangsa yang lebih baik</li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <h4 class="footer_title">Tentang Learnify</h4>
                 <p>
-                    Web Edukasi Open Source yang dibuat oleh Gusti robbani. Learnify adalah Web e-learning yang dilengkapi video, materi dan sistem ujian yang tersedia secara gratis. Learnify dibuat ditujukan untuk tpq muslimat al-quthubi agar para santri dapat terus belajar dan mengajar dimana saja dan kapan saja.
+				Learnify adalah Web E-learning yang dibuat oleh Gusti robbani. Website pembelajaran dimana para santri tpq muslimat al-quthubi bisa belajara secara online, Learnify dapat diakses dimana saja dan kapan saja
                 </p>
             </div>
         </div>
@@ -135,7 +135,8 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                 </p>
                                 <button class="btn btn-block font-weight-bold" style="background-color: #4dbf1c;color:white;font-size:18px;">Login
                                     Sekarang!</button>
-									<a class="navbar-brand logo_h" href="<?= base_url('user/lupa_password') ?>">lupa password</a>
+									<a class="navbar-brand logo_h" href="<?= base_url('account/lupa_password') ?>" style="color: green;">lupa password</a>
+
                             </form>
                         </div>
                     </div>
@@ -173,13 +174,25 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     </script>
 <?php endif; ?>
 
-
-<?php if ($this->session->flashdata('success-verify')) : ?>
+<?php if ($this->session->flashdata('succes-reset')) : ?>
     <script>
         Swal.fire({
             icon: 'success',
-            title: 'Email Telah Diverifikasi!',
+            title: 'Kamu berhasil mengganti password!',
             text: 'Sekarang login yuk!',
+            showConfirmButton: false,
+            timer: 2500
+        })
+    </script>
+<?php endif; ?>
+
+
+<?php if ($this->session->flashdata('success-upload')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Upload Sukses!',
+            text: 'Silahkan Menunggu Review!',
             showConfirmButton: false,
             timer: 2500
         })
@@ -250,7 +263,6 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
         });
     </script>
 <?php endif; ?>
-
 <?php if ($this->session->flashdata('false-login')) : ?>
     <script>
         $("#exampleModalCenter").modal("show")

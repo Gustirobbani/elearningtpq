@@ -20,7 +20,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="<?= base_url('assets/') ?>img/favicon.png" type="image/png">
-    <title>Selamat Belajar - Gusti robbani</title>
+    <title>Selamat Belajar - <?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?></title>
     <!-- Bootstrap CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.css">
@@ -61,7 +65,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, Santri</a>
+                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, <?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?></a>
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user') ?>">Beranda</a>
                             </li>
@@ -83,7 +91,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                 <div class="col-md-12 mt-1 ml-4">
                     <h1 class="display-4" style="color: black; font-family:'poppins';" data-aos="fade-down" data-aos-duration="1400">Selamat Belajar !
                     </h1>
-                    <h4 data-aos="fade-down" data-aos-duration="1700">TPQ Muslimat Al-Quthubi</h3>
+                    <h4 data-aos="fade-down" data-aos-duration="1700"><?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?> - TPQ Muslimat Al-Quthubi</h3>
                         <p><?= $detail->nama_mapel ?> - Kelas <?= $detail->kelas ?></p>
                         <hr align="left" width="600;">
                         <p style="line-height: 3px;">Kita akan mempelajari tentang</p>

@@ -66,7 +66,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, Santri
+                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai,  <?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?> 
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user') ?>">Beranda</a>
                             </li>
@@ -147,9 +151,9 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                 </a>
             </div>
             <div class="col-md-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-left">
-                <a href="<?= base_url('user') ?>">
+                <a href="<?= base_url('materi/komentar_b') ?>">
                     <div class="card-kelas">
-                        <img src="<?= base_url('assets/') ?>img/Kembali.png" class="card-img-top" alt="...">
+                        <img src="<?= base_url('assets/') ?>img/Review Hafalan.png" class="card-img-top" alt="...">
                     </div>
                 </a>
             </div>

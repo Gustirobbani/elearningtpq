@@ -56,7 +56,7 @@
                                 <button type="submit" class="btn btn-block btn-success btn-lg btn-icon icon-right" tabindex="4">
                                     Masuk
                                 </button>
-								<a class="navbar-brand logo_h" href="<?= base_url('user/lupa_password') ?>">lupa password</a>
+								<a class="navbar-brand logo_h" href="<?= base_url('account/lupa_password') ?>">lupa password</a>
                             </div>
                         </form>
                     </div>

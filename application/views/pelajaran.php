@@ -20,7 +20,7 @@
 <section class="courses_area p_40">
     <div class="container">
         <div class="main_title">
-            <h2 data-aos="fade-up" data-aos-duration="1600">Pelajaran Yang Tersedia di Learnify</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1600">Pelajaran Yang Tersedia di TPQ</h2>
             <p data-aos="fade-up" data-aos-duration="1800">Web e-learning ini di buat khusus untuk TPQ Muslimat Al-Quthubi untuk meningkatkan pembelajaran yang sudah ada di TPQ Tersebut</p>
         </div>
         <div class="row courses_inner">
@@ -30,8 +30,8 @@
                         <div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-1.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Daftar</a>
-                                <a href="javaScript:void(0);">
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
+                             <a href="javaScript:void(0);">
                                     <h4>Kelas Ilmu Tajwid</h4>
                                 </a>
                                 <ul class="list">
@@ -47,7 +47,7 @@
                         <div class="courses_item" data-aos="fade-down" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-2.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
                                 <a href="javaScript:void(0);">
                                     <h4>Kelas Aqidah Ahlaq</h4>
                                 </a>
@@ -63,7 +63,7 @@
                         <div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-4.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
                                 <a href="javaScript:void(0);">
                                     <h4>Kelas Bacaan Sholat</h4>
                                 </a>
@@ -79,7 +79,7 @@
                         <div class="courses_item" data-aos="fade-up" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-5.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
                                 <a href="javaScript:void(0);">
                                     <h4>Kelas Hafalan</h4>
                                 </a>
@@ -98,7 +98,7 @@
                 <div class="course_item" data-aos="fade-left" data-aos-duration="1800">
                     <img src="<?= base_url('assets/') ?>img/courses/course-3.jpg" alt="">
                     <div class="hover_text">
-                        <a class="cat" href="#">Gratis</a>
+					<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
                         <a href="javaScript:void(0);">
                             <h4>Kelas Risalatul Awal</h4>
                         </a>

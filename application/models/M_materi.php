@@ -7,6 +7,16 @@ class M_materi extends CI_Model
         return $this->db->get('materi');
     }
 
+    public function getKomentar()
+    {
+        return $this->db->get('komentar')->result();
+    }
+
+    public function getKolomKomentar()
+{
+    return $this->db->select('komen, nama, nama_hafalan')->get('komentar')->result();
+}
+
     public function belajar($id = null)
     {
         $query = $this->db->get_where('materi', array('id' => $id))->row();
@@ -16,6 +26,12 @@ class M_materi extends CI_Model
     public function detail_materi($id = null)
     {
         $query = $this->db->get_where('materi', array('id' => $id))->row();
+        return $query;
+    }
+
+    public function detail_komentar($id = null)
+    {
+        $query = $this->db->get_where('komentar', array('id' => $id))->row();
         return $query;
     }
 
@@ -170,4 +186,24 @@ class M_materi extends CI_Model
         $this->db->where('nama_mapel', $mapel);
         return $this->db->get('materi');
     }
+
+	public function komentar_a($kelas)
+	{
+		$this->db->where('kelas', $kelas);
+		$this->db->select('komen, nama');
+		return $this->db->get('komentar')->result();
+	}
+
+	public function komentar_b($kelas)
+	{
+		$this->db->where('kelas', $kelas);
+		$this->db->select('komen, nama');
+		return $this->db->get('komentar')->result();
+	}
+	public function komentar_c($kelas)
+	{
+		$this->db->where('kelas', $kelas);
+		$this->db->select('komen, nama');
+		return $this->db->get('komentar')->result();
+	}
 }

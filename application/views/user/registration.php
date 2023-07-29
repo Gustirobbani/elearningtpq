@@ -87,7 +87,7 @@
             </div>
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>Pendaftaran Learnify</h2>
+                    <h2>Pendaftaran TPQ Muslimat Al-Quthubi</h2>
                     <div class="page_link">
                         <a href="<?= base_url('welcome') ?>">Beranda</a>
                         <a href="<?= base_url('user/registration') ?>">Pendaftaran</a>
@@ -100,65 +100,63 @@
     <!-- End Home Banner Area  -->
 
     <!-- Registration Form Area -->
-    <div class="container mt-5 mb-5" id="registration">
-        <div class="row bg-registration p-3">
-            <div class="col-md-12 text-center">
-                <p class="registration-title font-weight-bold display-4 mt-4" style="font-size: 50px;">
-                    Pendaftaran Learnify</p>
-                <p style="line-height:-30px;margin-top:-20px;">Silahkan isi data data yang diperlukan dibawah ini </p>
-                <hr>
-            </div>
-            <div class="col-md-6 mx-auto text-center">
-                <div class="bodymovin" data-icon="<?= base_url('assets/') ?>json/registration-animation.json"></div>
-            </div>
-            <div class="col-md-6 mx-auto my-auto mt--5">
-                <form action="<?= base_url('user/registration_act') ?>" method="post">
-                    <div class="form-group">
-                        <label for="nama_lengkap" class="label-font-register">Nama lengkap</label>
-                        <input type="text" autocomplete="off" class="form-control effect-9" name="nama" id="nama_lengkap" value="<?= set_value('nama'); ?>">
-                        <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="label-font-register">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" value="<?= set_value('email'); ?>">
-                        <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
-                    </div>
+		<div class="container mt-5 mb-5" id="registration">
+		<div class="row bg-registration p-3">
+			<div class="col-md-12 text-center">
+				<p class="registration-title font-weight-bold display-4 mt-4" style="font-size: 50px;">
+					Pendaftaran Santri</p>
+				<p style="line-height:-30px;margin-top:-20px;">Silahkan isi data data yang diperlukan dibawah ini </p>
+				<hr>
+			</div>
+			<div class="col-md-6 mx-auto text-center">
+				<div class="bodymovin" data-icon="<?= base_url('assets/') ?>json/registration-animation.json"></div>
+			</div>
+			<div class="col-md-6 mx-auto my-auto mt--5">
+				<form action="<?= base_url('user/registration_act') ?>" method="post" onsubmit="return validateForm();">
 					<div class="form-group">
-					<label for="inputState">Kelas</label>
-                                        <select required id="inputState" name="kelas" class="form-control">
-                                            <option selected>Pilih disini</option>
-                                            <option value="A">Kelas A</option>
-                                            <option value="B">Kelas B</option>
-                                            <option value="C">Kelas C</option>
-                                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="password" class="label-font-register">Password</label>
-                            <input type="password" class="form-control" name="password" id="password">
-                            <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="retype_password" class="label-font-register">Retype password</label>
-                            <input type="password" class="form-control" name="retype_password" id="retype_password">
-                            <?= form_error('retype_password', '<small class="text-danger">', '</small>'); ?>
-                        </div>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input checkbox" type="checkbox" id="defaultCheck1" onchange="document.getElementById('btnsubmit').disabled = !this.checked;">
-                        <label class=" form-check-label" for="defaultCheck1">
-                            Saya setuju dan ingin melanjutkan
-                        </label>
-                    </div>
-                    <p class="terms">Dengan mendaftar anda menyetujui <i>privasi dan persyaratan ketentuan
-                            hukum kami </i>
-                        baca selengkapnya <a href="#"> disini</a></p>
-                    <button type="submit" name="submit" id="btnsubmit" disabled class="btn btn-block btn-modal btn-submit">Daftar
-                        Sekarang!</button>
-                </form>
-            </div>
-        </div>
-    </div>
+						<label for="nama_lengkap" class="label-font-register">Nama lengkap</label>
+						<input type="text" autocomplete="off" class="form-control effect-9" name="nama" id="nama_lengkap" value="<?= set_value('nama'); ?>">
+						<?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
+					</div>
+					<div class="form-group">
+						<label for="email" class="label-font-register">Email</label>
+						<input type="text" class="form-control" name="email" id="email" value="<?= set_value('email'); ?>">
+						<?= form_error('email', '<small class="text-danger">', '</small>'); ?>
+					</div>
+					<div class="form-group">
+						<label for="inputState" style="font-weight: bold;">Kelas</label>
+						<select required id="inputState" name="kelas" class="form-control">
+							<option selected>Pilih disini</option>
+							<option value="A">Kelas A</option>
+							<option value="B">Kelas B</option>
+							<option value="C">Kelas C</option>
+						</select>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="password" class="label-font-register">Password</label>
+							<input type="password" class="form-control" name="password" id="password">
+							<?= form_error('password', '<small class="text-danger">', '</small>'); ?>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="retype_password" class="label-font-register">Retype password</label>
+							<input type="password" class="form-control" name="retype_password" id="retype_password">
+							<?= form_error('retype_password', '<small class="text-danger">', '</small>'); ?>
+						</div>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input checkbox" type="checkbox" id="defaultCheck1" onchange="document.getElementById('btnsubmit').disabled = !this.checked;">
+						<label class=" form-check-label" for="defaultCheck1">
+							Saya setuju dan ingin melanjutkan
+						</label>
+					</div>
+					<p class="terms">Dengan mendaftar anda menyetujui <i>privasi dan persyaratan ketentuan hukum kami </i></p>
+					<button type="submit" name="submit" id="btnsubmit" disabled class="btn btn-block btn-modal btn-submit">Daftar Sekarang!</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
     <!-- End Registration Form Area -->
 
     <!-- Start Checkbox Scripts -->

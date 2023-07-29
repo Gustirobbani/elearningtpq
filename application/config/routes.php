@@ -52,5 +52,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
-$route['guru/addComment'] = 'guru/addComment';
 $route['guru/viewVideoList/(:any)'] = 'guru/viewVideoList';
+$route['video/(:any)/(:any)'] = 'video/view/$1/$2';
+$route['materi/komentar'] = 'Materi/komentar';
+$route['guru/addComment'] = 'guru/addComment';
+$route['user/lupa-password'] = 'account/lupa_password';
+$route['send-email'] = 'Account';
+$route['email'] = 'Account/send';
+$route['user/reset_password/(:any)'] = 'account/reset_password_form/$1';
+
+
+
+

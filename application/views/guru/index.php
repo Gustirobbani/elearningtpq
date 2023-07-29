@@ -215,11 +215,17 @@
                                     <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                                         <ul class="kt-menu__subnav">
                                             <li class="kt-menu__item " aria-haspopup="true"><a
-                                                    href="<?=base_url('guru/showVideo')?>" class="kt-menu__link "><i
+                                                    href="<?=base_url('guru/showNamaA')?>" class="kt-menu__link "><i
                                                         class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                                        class="kt-menu__link-text">Cek hafalan</span></a></li>
-											
-														
+                                                        class="kt-menu__link-text">Hafalan kelas A</span></a></li>
+														<li class="kt-menu__item " aria-haspopup="true"><a
+														href="<?=base_url('guru/showNamaB')?>" class="kt-menu__link "><i
+														class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                        class="kt-menu__link-text">Hafalan Kelas B</span></a></li>
+														<li class="kt-menu__item " aria-haspopup="true"><a
+														href="<?=base_url('guru/showNamaC')?>" class="kt-menu__link "><i
+														class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                        class="kt-menu__link-text">Hafalan Kelas C</span></a></li>
                                         </ul>
                                     </div>
                                 </li>

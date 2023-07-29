@@ -7,11 +7,10 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-		$this->load->library('email'); // Load library email untuk mengirim email konfirmasi
     	$this->load->model('m_siswa');
-        // $this->session->set_flashdata('not-login', 'Gagal!');
-        // if (!$this->session->userdata('email')) {
-        //     redirect('welcome');
+      //  $this->session->set_flashdata('not-login', 'Gagal!');
+        //if (!$this->session->userdata('email')) {
+        //redirect('welcome');
     }
 
     public function index()
@@ -46,7 +45,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('siswa', ['email' =>
             $this->session->userdata('email')])->row_array();
 
-        $this->load->view('user/kelasB');
+        $this->load->view('user/kelasC');
         $this->load->view('template/footer');
     }
 
@@ -58,11 +57,11 @@ class User extends CI_Controller
 
     public function registration_act()
     {
-        $this->form_validation->set_rules('nama', 'Nama', 'required|trim|valid_nama|is_unique|min_length[5]|[siswa.nama]', [
-            'is_unique' => 'Nama telah di gunakan',
-			'required' => 'Harap isi kolom username.',
-            'min_length' => 'Nama terlalu pendek.',
-        ]);
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[4]|callback_check_nama', [
+			'required' => 'Harap isi kolom nama.',
+			'min_length' => 'Nama terlalu pendek.',
+			'check_nama' => 'Nama ini telah digunakan!'
+		]);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[siswa.email]', [
             'is_unique' => 'Email ini telah digunakan!',
             'required' => 'Harap isi kolom email.',
@@ -76,6 +75,9 @@ class User extends CI_Controller
         $this->form_validation->set_rules('retype_password', 'Password', 'required|trim|matches[password]', [
             'matches' => 'Password tidak sama!',
         ]);
+		$this->form_validation->set_rules('kelas', 'Kelas', 'required', [
+			'required' => 'Harap pilih kelas.',
+		]);
 
         if ($this->form_validation->run() == false) {
             $this->load->view('template/nav');
@@ -95,17 +97,17 @@ class User extends CI_Controller
 
             //siapkan token
 
-            // $token = base64_encode(random_bytes(32));
-            // $user_token = [
-            //     'email' => $email,
-            //     'token' => $token,
-            //     'date_created' => time(),
-            // ];
+          //  $token = base64_encode(random_bytes(32));
+            //$user_token = [
+            //'email' => $email,
+            //'token' => $token,
+            //'date_created' => time(),
+           // ];
 
             $this->db->insert('siswa', $data);
-            // $this->db->insert('token', $user_token);
+            //$this->db->insert('token', $user_token);
 
-            // $this->_sendEmail($token, 'verify');
+           // $this->_sendEmail($token, 'verify');
 
             $this->session->set_flashdata('success-reg', 'Berhasil!');
             redirect(base_url('welcome'));
@@ -150,83 +152,17 @@ class User extends CI_Controller
             die();
         }
     }
-	
-	public function lupa_password() {
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		
-		if ($this->form_validation->run() == FALSE) {
-		  // Validasi gagal, tampilkan kembali form dengan pesan error
-		  $this->load->view('lupa_password');
-		} else {
-		  // Validasi berhasil, proses reset password
-		  $email = $this->input->post('email');
-		  $user = $this->m_siswa->email_detail($email); // Ganti dengan method Anda untuk mendapatkan user berdasarkan email
-		  
-		  if ($user) {
-			// Generate token unik untuk reset password
-			$token = bin2hex(random_bytes(20));
-			
-			// Simpan token dan email pengguna ke database (ganti dengan method Anda)
-			$this->m_siswa->saveResetToken($user['id'], $token);
-			
-			// Konfigurasi email
-			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = 'ssl://smtp.googlemail.com';
-			$config['smtp_port'] = 465;
-			$config['smtp_user'] = 'gustirb133@gmail.com';
-			$config['smtp_pass'] = 'gusti1234_';
-			$config['mailtype'] = 'html';
-			$this->email->initialize($config);
-			
-			// Kirim email konfirmasi reset password
-			$this->email->from('gustirb133@gmail.com', 'Gusti robbani');
-			$this->email->to($email);
-			$this->email->subject('Reset Password');
-			$this->email->message('Silakan klik link berikut untuk mereset password Anda: ' . base_url('reset_password/' . $token));
-			
-			if ($this->email->send()) {
-			  // Email berhasil dikirim, tampilkan pesan sukses
-			  $data['message'] = 'Email konfirmasi reset password telah dikirim ke ' . $email;
-			  $this->load->view('sukses_password', $data);
-			} else {
-			  // Email gagal dikirim, tampilkan pesan error
-			  $data['message'] = 'Terjadi kesalahan saat mengirim email. Silakan coba lagi.';
-			  $this->load->view('lupa_password', $data);
-			}
-		  } else {
-			// User tidak ditemukan, tampilkan pesan error
-			$data['message'] = 'Email tidak ditemukan.';
-			$this->load->view('lupa_password', $data);
-		  }
-		}
-	  }
-	  public function reset_password()
-	  {
-		  // Memvalidasi input
-		  $this->form_validation->set_rules('new_password', 'New Password', 'required');
-		  $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[new_password]');
-		  
-		  if ($this->form_validation->run() == FALSE)
-		  {
-			  // Jika validasi gagal, tampilkan form reset password kembali dengan error
-			  $data['user_id'] = $this->input->post('user_id');
-			  $data['reset_token'] = $this->input->post('reset_token');
-			  $this->load->view('reset_password copy', $data);
-		  }
-		  else
-		  {
-			  // Simpan password baru ke dalam database
-			  $new_password = $this->input->post('new_password');
-			  $user_id = $this->input->post('user_id');
-			  
-			  // Lakukan operasi penyimpanan password baru ke dalam database sesuai dengan kebutuhan aplikasi Anda
-			  
-			  // Tampilkan pesan sukses jika berhasil mereset password
-			  echo "Password has been reset successfully!";
-		  }
-	  }
-  
-	}
+	public function check_nama($nama)
+{
+    $this->db->where('nama', $nama);
+    $query = $this->db->get('siswa');
+    if ($query->num_rows() > 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+}
 	
 
 

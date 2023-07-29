@@ -39,12 +39,12 @@
                     <div class="info_item">
                         <i class="lnr lnr-phone-handset"></i>
                         <h6><a href="#">
-                                085842038004</a></h6>
+                                085842038004 (KH. Fauzi robbani,S.Hi.,M.Si)</a></h6>
                         <p></p>
                     </div>
                     <div class="info_item">
                         <i class="lnr lnr-envelope"></i>
-                        <h6><a href="#">tpqalquthubi@gmail.com</a></h6>
+                        <h6><a href="#">tpqmuslimatalquthubi@gmail.com</a></h6>
                         <p></p>
                     </div>
                 </div>

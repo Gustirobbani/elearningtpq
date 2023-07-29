@@ -97,7 +97,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
  */
-$config['enable_hooks'] = false;
+$config['enable_hooks'] = true;
 /*
 |--------------------------------------------------------------------------
 | Class Extension Prefix
@@ -495,3 +495,5 @@ $config['rewrite_short_tags'] = false;
 | Array:        array('10.0.1.200', '192.168.5.0/24')
  */
 $config['proxy_ips'] = '';
+$route['send-email'] = 'EmailController';
+$route['email'] = 'EmailController/send';

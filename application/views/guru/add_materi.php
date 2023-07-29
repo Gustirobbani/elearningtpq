@@ -210,14 +210,22 @@
                                 <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel"
                                     data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;"
                                         class="kt-menu__link kt-menu__toggle"><span
-                                            class="kt-menu__link-text">Materi</span><i
+                                            class="kt-menu__link-text">Cek Hafalan</span><i
                                             class="kt-menu__hor-arrow la la-angle-down"></i></a>
                                     <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                                         <ul class="kt-menu__subnav">
-                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;"
-                                                    class="kt-menu__link "><i
+										<li class="kt-menu__item " aria-haspopup="true"><a
+                                                    href="<?=base_url('guru/showNamaA')?>" class="kt-menu__link "><i
                                                         class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                                        class="kt-menu__link-text">Tambah Materi</span></a></li>
+                                                        class="kt-menu__link-text">Hafalan kelas A</span></a></li>
+														<li class="kt-menu__item " aria-haspopup="true"><a
+														href="<?=base_url('guru/showNamaB')?>" class="kt-menu__link "><i
+														class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                        class="kt-menu__link-text">Hafalan Kelas B</span></a></li>
+														<li class="kt-menu__item " aria-haspopup="true"><a
+														href="<?=base_url('guru/showNamaC')?>" class="kt-menu__link "><i
+														class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                        class="kt-menu__link-text">Hafalan Kelas C</span></a></li>
                                         </ul>
                                     </div>
                                 </li>

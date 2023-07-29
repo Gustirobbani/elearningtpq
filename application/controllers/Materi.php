@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-
-
 class Materi extends CI_Controller
 {
+    private $list_materi = array();
+
     public function __construct()
     {
         parent::__construct();
@@ -26,17 +26,32 @@ class Materi extends CI_Controller
         $this->list_materi['hafalan_a'] = $this->m_materi->hafalan_a()->result();
         $this->list_materi['hafalan_b'] = $this->m_materi->hafalan_b()->result();
         $this->list_materi['hafalan_c'] = $this->m_materi->hafalan_c()->result();
+		
     }
 
-    function generateMateri($materi){
-    
-        $data['materi'] = $this->list_materi[$materi];
-        $data['user'] = $this->db->get_where('siswa', ['email' =>
-            $this->session->userdata('email')])->row_array();
-        $this->load->view('materi/'.str_replace('_', '-', $materi), $data);
-        $this->load->view('template/footer');
-    }
-
+	public function generateMateri($materi)
+	{
+		if (array_key_exists($materi, $this->list_materi)) {
+			$data['materi'] = $this->list_materi[$materi];
+		} else {
+			// Jika indeks tidak ditemukan, berikan nilai default atau tindakan yang sesuai
+			$data['materi'] = array(); // Nilai default, atau tindakan lain yang sesuai
+		}
+	
+		$data['user'] = $this->db->get_where('siswa', ['email' => $this->session->userdata('email')])->row_array();
+		// Mengambil data komentar dari tabel komentar
+		$data['komentar'] = $this->m_materi->getKolomKomentar();
+		// Menambahkan data pengguna ke dalam array komentar
+		foreach ($data['komentar'] as &$k) {
+			if ($k->nama === $data['user']['nama']) {
+				$k->isCurrentUser = true;
+			} else {
+				$k->isCurrentUser = false;
+			}
+		}
+		$this->load->view('materi/' . str_replace('_', '-', $materi), $data);
+		$this->load->view('template/footer');
+	}
     public function belajar($id)
     {
         $where = array('id' => $id);
@@ -50,7 +65,7 @@ class Materi extends CI_Controller
     {
         $this->generateMateri('bacaan_sholat_a');
     }
-    
+
     public function bacaan_sholat_b()
     {
         $this->generateMateri('bacaan_sholat_b');
@@ -95,30 +110,47 @@ class Materi extends CI_Controller
     {
         $this->generateMateri('surah_pendek_a');
     }
-    
+
     public function surah_pendek_b()
     {
         $this->generateMateri('surah_pendek_b');
     }
-    
+
     public function surah_pendek_c()
     {
         $this->generateMateri('surah_pendek_c');
     }
-    
+
     public function hafalan_a()
     {
         $this->generateMateri('hafalan_a');
     }
-    
+
     public function hafalan_b()
     {
         $this->generateMateri('hafalan_b');
     }
-    
+
     public function hafalan_c()
     {
         $this->generateMateri('hafalan_c');
     }
 
+    public function komentar_a()
+    {
+        $data['komentar'] = $this->m_materi->getKolomKomentar();
+        $this->generateMateri('komentar_a');
+    }
+
+    public function komentar_b()
+    {
+        $data['komentar'] = $this->m_materi->getKolomKomentar();
+        $this->generateMateri('komentar_b');
+    }
+
+    public function komentar_c()
+    {
+        $data['komentar'] = $this->m_materi->getKolomKomentar();
+        $this->generateMateri('komentar_c');
+    }
 }

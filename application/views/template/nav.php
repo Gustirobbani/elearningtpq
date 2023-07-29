@@ -54,7 +54,7 @@
                     </ul>
                 </div>
                 <div class="float-right">
-                    <a class="dn_btn" href="mailto:apps.learnify@gmail.com">tpqalquthubi@gmail.com</a>
+                    <a class="dn_btn" href="mailto:apps.learnify@gmail.com">tpqmuslimatalquthubi@gmail.com</a>
                 </div>
             </div>
         </div>

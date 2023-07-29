@@ -1,16 +1,3 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@Email : syaokay@gmail.com
-
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, materi dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
--->
-
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +48,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, Santri</a>
+                            <li class="nav-item "><a class="nav-link" href="javascript:void(0)">Hai, <?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?></a>
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user') ?>">Beranda</a>
                             </li>
@@ -81,15 +72,17 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
         <div class="bg-white mx-auto p-4 buat-text" data-aos="fade-down" data-aos-duration="1400" style="width: 100%; border-radius:10px;">
             <div class="row" style="color: black; font-family: 'poppins';">
                 <div class="col-md-12 mt-1 text-center">
-                    <h1 class="display-4" data-aos="fade-down" data-aos-duration="1400">Silahkan upload rekaman hafalan di bawah ini !
+                    <h1 class="display-4" data-aos="fade-down" data-aos-duration="1400">Silahkan upload hafalan !
                     </h1>
-                    <h4 data-aos="fade-down" data-aos-duration="1700">TPQ Muslimat Al-Quthubi</h4>
+                    <h4 data-aos="fade-down" data-aos-duration="1700"><?php
+                            $data['user'] = $this->db->get_where('siswa', ['email' =>
+                            $this->session->userdata('email')])->row_array();
+                            echo $data['user']['nama'];
+                            ?> - TPQ Muslimat Al-Quthubi</h4>
                     <p>Hafalan Kelas A</p>
                     <hr width="80%">
                     <p data-aos="fade-down" class="font-weight-bold" data-aos-duration="1800">nantinya ustad akan mengkoreksi hafalan santri
                     </p>
-				
-
                 </div>
             </div>
         </div>
@@ -116,80 +109,87 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
             <?php } ?>
         </div>
     </div>
-	<!DOCTYPE html>
-								<html>
-<head>
-  <meta charset="utf-8">
-  <title>Form Upload</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
+	<style>
+		/* Form Styles */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #28a745;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+</style>
+<!-- Upload Form -->
+<div class="form-container">
+    <form action="<?= base_url('upload/do_upload') ?>" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <label for="nama_hafalan">Nama Hafalan:</label>
+        <input type="text" name="nama_hafalan" required>
+
+        <label for="Video">File Video:</label>
+        <input type="file" name="Video" accept="video/*" required>
+
+        <input type="hidden" name="kelas" value="A">
+
+        <input type="submit" value="Upload">
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var namaHafalan = document.getElementsByName("nama_hafalan")[0].value;
+        var videoFile = document.getElementsByName("Video")[0].value;
+
+        if (namaHafalan === "" || videoFile === "") {
+            alert("Please enter the hafalan name and select a video file before uploading.");
+            return false;
+        }
     }
-
-    form {
-      width: 300px;
-      margin: 100px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      margin-bottom: 20px;
-      box-sizing: border-box;
-    }
-
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-  <form action="<?= base_url('upload/do_upload') ?>" method="POST" enctype="multipart/form-data">
-    <label for="nama_hafalan">Nama Hafalan:</label>
-    <input type="text" name="nama_hafalan" required>
-
-    <label for="Video">File Video:</label>
-    <input type="file" name="Video" accept="Video/*" required>
-
-    <input type="submit" value="Upload">
-  </form>
-</body>
-</html>
+</script>
     <!-- End Lesson Cards -->
-
-
     <br>
-
-
     <!-- Start Animate On Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
     <!-- End Animate On Scroll -->
+</body>
+
+</html>

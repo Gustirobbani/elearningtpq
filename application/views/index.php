@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="banner_content text-center">
 				<h3 data-aos="fade-up" data-aos-duration="1600">E-Learning Ramah Anak<br /> TPQ Muslimat Al-Quthubi</h3>
-				<p data-aos="fade-up" data-aos-duration="1900">Dengan Learnify kemudahan kegiatan belajar mengajar dapat terpenuhi. Para guru dan siswa dapat
+				<p data-aos="fade-up" data-aos-duration="1900">Dengan Learnify kemudahan kegiatan belajar mengajar dapat terpenuhi. Para ustadz dan santri dapat
 					belajar meski banyak halangan atau rintangan. Nikmati Pembelajaran terstruktur dan efektif menggunakan Learnify serta kemudahan belajar dengan menggunakan aplikasi kami. </p>
 				<a data-aos="fade-up" data-aos-duration="2000" class="main_btn" href="<?= base_url('user/registration') ?>#registration">Daftar Sekarang <span class="lnr lnr-arrow-right"></span></a>
 			</div>
@@ -26,7 +26,7 @@
 							<i class="lnr lnr-users"></i>
 						</div>
 						<div class="media-body">
-							<h5>Admin, User & Guru Data Management</h5>
+							<h5>Admin, Santri & Ustadz Data Management</h5>
 						</div>
 					</div>
 				</div>
@@ -107,7 +107,7 @@
 						<div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
 							<img src="<?= base_url('assets/') ?>img/courses/course-1.jpg" alt="">
 							<div class="hover_text">
-								<a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
 								<a href="javaScript:void(0);">
 									<h4>Kelas Ilmu Tajwid</h4>
 								</a>
@@ -124,7 +124,7 @@
 						<div class="courses_item" data-aos="fade-down" data-aos-duration="1800">
 							<img src="<?= base_url('assets/') ?>img/courses/course-2.jpg" alt="">
 							<div class="hover_text">
-								<a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
 								<a href="javaScript:void(0);">
 									<h4>Kelas Aqidah Ahlaq</h4>
 								</a>
@@ -140,7 +140,7 @@
 						<div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
 							<img src="<?= base_url('assets/') ?>img/courses/course-4.jpg" alt="">
 							<div class="hover_text">
-								<a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
 								<a href="javaScript:void(0);">
 									<h4>Kelas Bacaan Sholat</h4>
 								</a>
@@ -156,7 +156,7 @@
 						<div class="courses_item" data-aos="fade-up" data-aos-duration="1800">
 							<img src="<?= base_url('assets/') ?>img/courses/course-5.jpg" alt="">
 							<div class="hover_text">
-								<a class="cat" href="#">Daftar</a>
+							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
 								<a href="javaScript:void(0);">
 									<h4>Kelas Hafalan</h4>
 								</a>
@@ -175,7 +175,7 @@
 				<div class="course_item" data-aos="fade-left" data-aos-duration="1800">
 					<img src="<?= base_url('assets/') ?>img/courses/course-3.jpg" alt="">
 					<div class="hover_text">
-						<a class="cat" href="#">Daftar</a>
+					<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
 						<a href="javaScript:void(0);">
 							<h4>Kelas Risalatul Awal</h4>
 						</a>
@@ -207,11 +207,6 @@
 							<img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
 							<h4>Ust. Sultan Abdial Haq</h4>
 							<ul class="list">
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
 							</ul>
 							<p> "Dengan adanya e-learning berbasis website untuk tpq muslimat al-quthubi sangat bisa membantu akan proses jalannya pembelajaran di tpq ini"</p>
 						</div>
@@ -221,11 +216,6 @@
 							<img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
 							<h4>Taupik Hidayat</h4>
 							<ul class="list">
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
 							</ul>
 							<p>"Kami selaku wali santri di tpq muslimat al-quthubi sangat bersyukur dengan adanya kemajuan pembelajaran di tpq ini dan kita sebagai orang tua dapat selalu mengawasi anak-anak dalam proses pembelajaran"</p>
 						</div>
@@ -235,11 +225,6 @@
 							<img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
 							<h4>Diki Ramdani</h4>
 							<ul class="list">
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
-								<li><a href="#"><i class="fa fa-star"></i></a></li>
 							</ul>
 							<p>"Saya sebagai salah satu santri di tpq ini merasa lebih mudah memahami pelajaran yang di jelaskan oleh ustadz melalui video pembelajaran yang bisa di akses melalui website ini"
 							</p>

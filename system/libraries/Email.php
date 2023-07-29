@@ -1,53 +1,5 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	https://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-/**
- * CodeIgniter Email Class
- *
- * Permits email to be sent using Mail, Sendmail, or SMTP.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/libraries/email.html
- */
 class CI_Email {
 
 	/**
@@ -118,7 +70,7 @@ class CI_Email {
 	 *
 	 * @var	string	empty, 'tls' or 'ssl'
 	 */
-	public $smtp_crypto	= '';
+	public $smtp_crypto	= 'ssl';
 
 	/**
 	 * Whether to apply word-wrapping to the message body.
@@ -2054,57 +2006,51 @@ class CI_Email {
 	 * @return	string
 	 */
 	protected function _smtp_connect()
-	{
-		if (is_resource($this->_smtp_connect))
-		{
-			return TRUE;
-		}
+{
+    if (is_resource($this->_smtp_connect))
+    {
+        return TRUE;
+    }
 
-		$ssl = ($this->smtp_crypto === 'ssl') ? 'ssl://' : '';
+    $ssl = ($this->smtp_crypto === 'ssl') ? 'ssl://' : '';
 
-		$this->_smtp_connect = fsockopen($ssl.$this->smtp_host,
-							$this->smtp_port,
-							$errno,
-							$errstr,
-							$this->smtp_timeout);
+    $this->_smtp_connect = fsockopen($ssl . $this->smtp_host,
+        $this->smtp_port,
+        $errno,
+        $errstr,
+        $this->smtp_timeout);
 
-		if ( ! is_resource($this->_smtp_connect))
-		{
-			$this->_set_error_message('lang:email_smtp_error', $errno.' '.$errstr);
-			return FALSE;
-		}
+    if (!is_resource($this->_smtp_connect))
+    {
+        $this->_set_error_message('lang:email_smtp_error', $errno . ' ' . $errstr);
+        return FALSE;
+    }
 
-		stream_set_timeout($this->_smtp_connect, $this->smtp_timeout);
-		$this->_set_error_message($this->_get_smtp_data());
+    stream_set_timeout($this->_smtp_connect, $this->smtp_timeout);
 
-		if ($this->smtp_crypto === 'tls')
-		{
-			$this->_send_command('hello');
-			$this->_send_command('starttls');
+    if ($this->smtp_crypto === 'ssl')
+    {
+        $method = is_php('5.6')
+            ? STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT
+            : STREAM_CRYPTO_METHOD_TLS_CLIENT;
 
-			/**
-			 * STREAM_CRYPTO_METHOD_TLS_CLIENT is quite the mess ...
-			 *
-			 * - On PHP <5.6 it doesn't even mean TLS, but SSL 2.0, and there's no option to use actual TLS
-			 * - On PHP 5.6.0-5.6.6, >=7.2 it means negotiation with any of TLS 1.0, 1.1, 1.2
-			 * - On PHP 5.6.7-7.1.* it means only TLS 1.0
-			 *
-			 * We want the negotiation, so we'll force it below ...
-			 */
-			$method = is_php('5.6')
-				? STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT
-				: STREAM_CRYPTO_METHOD_TLS_CLIENT;
-			$crypto = stream_socket_enable_crypto($this->_smtp_connect, TRUE, $method);
+        if (!stream_socket_enable_crypto($this->_smtp_connect, TRUE, $method))
+        {
+            $this->_set_error_message('lang:email_smtp_error', $this->_get_smtp_data());
+            return FALSE;
+        }
+    }
+    else
+    {
+        // Send the SMTP hello command
+        if (!$this->_send_command('hello'))
+        {
+            return FALSE;
+        }
+    }
 
-			if ($crypto !== TRUE)
-			{
-				$this->_set_error_message('lang:email_smtp_error', $this->_get_smtp_data());
-				return FALSE;
-			}
-		}
-
-		return $this->_send_command('hello');
-	}
+    return TRUE;
+}
 
 	// --------------------------------------------------------------------
 
@@ -2142,19 +2088,19 @@ class CI_Email {
 						$this->_send_data('MAIL FROM:<'.$data.'>');
 						$resp = 250;
 			break;
-			case 'to' :
-
-						if ($this->dsn)
-						{
-							$this->_send_data('RCPT TO:<'.$data.'> NOTIFY=SUCCESS,DELAY,FAILURE ORCPT=rfc822;'.$data);
-						}
-						else
-						{
-							$this->_send_data('RCPT TO:<'.$data.'>');
-						}
-
-						$resp = 250;
-			break;
+			case 'to':
+				$dsn_options = '';
+				if ($this->dsn) {
+					// Check if the recipient email address is set
+					$recipient_email = trim($data, '<>');
+					if (filter_var($recipient_email, FILTER_VALIDATE_EMAIL)) {
+						$dsn_options = ' NOTIFY=SUCCESS,DELAY,FAILURE ORCPT=rfc822;' . $data;
+					}
+				}
+			
+				$this->_send_data('RCPT TO:<' . $data . '>' . $dsn_options);
+				$resp = 250;
+				break;			
 			case 'data'	:
 
 						$this->_send_data('DATA');

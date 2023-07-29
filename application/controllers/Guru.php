@@ -1,12 +1,15 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Guru extends CI_Controller
 {
-	
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Komentar_model', 'komentar_model');
+        $this->load->model('Upload_model', 'upload_model');
+		$this->load->model('M_guru', 'm_guru');
+		$this->load->model('Video_model', 'video_model');
         $this->load->helper('url');
         $this->session->set_flashdata('not-login', 'Gagal!');
         if (!$this->session->userdata('email')) {
@@ -21,51 +24,190 @@ class Guru extends CI_Controller
 
         $this->load->view('guru/index');
     }
-	public function showVideo()
-	{
-		$this->load->model('upload_model');
-		$data['video'] = $this->upload_model->tampil_data()->result();
-		$this->load->view('guru/video_list', $data);
-	}
-	public function viewVideoList($classId) {
-        // Mendapatkan informasi video list
 
-        // Mendapatkan data komentar dari database
-        $this->load->model('Comments_model');
-        $data['comments'] = $this->Comments_model->getComments($classId);
+    public function showVideoA($id_siswa)
+{
+    $video = $this->upload_model->getAllDataByNama($id_siswa);
+    $data['video'] = $video;
+    $data['id_siswa'] = $id_siswa;
 
-        // Memproses penambahan komentar
-        if ($this->input->post('submit')) {
-            $commentData = array(
-                'class_id' => $classId,
-                'comment' => $this->input->post('comment')
-            );
-            $this->Comments_model->addComment($commentData);
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $komen = $this->input->post('komen');
 
-            // Mendapatkan data komentar yang baru saja diunggah
-            $data['submittedComment'] = $this->Comments_model->getCommentById($this->db->insert_id());
-        }
+        // Simpan komentar ke dalam database menggunakan model atau lakukan operasi lain yang diperlukan
 
-        $this->load->view('guru/video_list', $data);
+        $this->session->set_flashdata('success', 'Komentar berhasil ditambahkan.');
+        redirect('guru/showVideoA/'.$id_siswa);
     }
 
-	public function addComment() {
-		// Mengambil data yang dikirim melalui form
-		$classId = $this->input->post('classId');
-		$comment = $this->input->post('comment');
+    $this->load->view('guru/showVideoA', $data);
+}
+
+
+public function showVideoB($id_siswa)
+{
+    $video = $this->upload_model->getAllDataByNama($id_siswa);
+    $data['video'] = $video;
+    $data['id_siswa'] = $id_siswa;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $komen = $this->input->post('komen');
+
+        // Simpan komentar ke dalam database menggunakan model atau lakukan operasi lain yang diperlukan
+
+        $this->session->set_flashdata('success', 'Komentar berhasil ditambahkan.');
+        redirect('guru/showVideoB/'.$id_siswa);
+    }
+
+    $this->load->view('guru/showVideoB', $data);
+}
+
+public function showVideoC($id_siswa)
+{
+    $video = $this->upload_model->getAllDataByNama($id_siswa);
+    $data['video'] = $video;
+    $data['id_siswa'] = $id_siswa;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $komen = $this->input->post('komen');
+
+        // Simpan komentar ke dalam database menggunakan model atau lakukan operasi lain yang diperlukan
+
+        $this->session->set_flashdata('success', 'Komentar berhasil ditambahkan.');
+        redirect('guru/showVideoC/'.$id_siswa);
+    }
+
+    $this->load->view('guru/showVideoC', $data);
+}
 	
-		// Memuat model Comments_model
-		$this->load->model('Comments_model');
+
+    public function viewHafalan()
+    {
+        $data['hafalan'] = $this->m_guru->getHafalan();
+        $data['comments'] = $this->comments_model->getComments();
+        $this->load->view('guru/hafalan', $data);
+    }
+
+    public function kelasA()
+    {
+        $data['user'] = $this->db->get_where('siswa', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $this->load->view('user/kelasA');
+        $this->load->view('template/footer');
+    }
+
+    public function kelasB()
+    {
+        $data['user'] = $this->db->get_where('siswa', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $this->load->view('user/kelasB');
+        $this->load->view('template/footer');
+    }
+
+    public function kelasC()
+    {
+        $data['user'] = $this->db->get_where('siswa', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $this->load->view('user/kelasC');
+        $this->load->view('template/footer');
+    }
+
+    public function showNamaA()
+    {
+        $data['uploads'] = $this->upload_model->getNamaByKelas('A');
+        $data['nama_hafalan'] = $this->upload_model->getNamaHafalan();
+        $data['nama_kelas'] = 'A';
+
+        $this->load->view('guru/showNamaA', $data);
+    }
+
+    public function showNamaB()
+    {
+        $data['uploads'] = $this->upload_model->getNamaByKelas('B');
+        $data['nama_hafalan'] = $this->upload_model->getNamaHafalan();
+        $data['nama_kelas'] = 'B';
+
+        $this->load->view('guru/showNamaB', $data);
+    }
+
+    public function showNamaC()
+    {
+        $data['uploads'] = $this->upload_model->getNamaByKelas('C');
+        $data['nama_hafalan'] = $this->upload_model->getNamaHafalan();
+        $data['nama_kelas'] = 'C';
+
+        $this->load->view('guru/showNamaC', $data);
+    }
+	public function tambahKomentar() {
+		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+			$id_siswa = $this->session->userdata('id_siswa');
+			$komen = $this->input->post('komen');
 	
-		// Menyimpan komentar ke database
-		$data = array(
-			'comment' => $comment
-		);
-		$this->Comments_model->addComment($data);
+			// Verifikasi bahwa nilai $id_siswa ada dan $komen tidak kosong
+			if ($id_siswa !== null && $id_siswa !== '' && !empty($komen)) {
+				$uploadsData = $this->db->get_where('uploads', ['id_siswa' => $id_siswa])->row_array();
+				$this->session->set_userdata('id_siswa', $id_siswa); // Simpan ID pengguna ke dalam session
 	
-		// Redirect kembali ke halaman video_list
-		redirect('guru/showVideo/' . $classId);
+				if (!empty($uploadsData)) {
+					$dataKomentar = array(
+						'id_siswa' => $uploadsData['id_siswa'],
+						'nama' => $uploadsData['nama'],
+						'email' => $uploadsData['email'],
+						'kelas' => $uploadsData['kelas'],
+						'nama_hafalan' => $uploadsData['nama_hafalan'],
+						'komen' => $komen,
+					);
+					$this->load->model('Komentar_model');
+					$this->Komentar_model->simpanKomentar($dataKomentar);
+	
+					// Set pesan flash untuk menampilkan pesan di halaman selanjutnya
+					$this->session->set_flashdata('success-reg', 'Komentar berhasil dikirim.');
+	
+					// Ambil kelas dan nama sesi dari $uploadsData
+					$kelas = strtolower($uploadsData['kelas']);
+					$nama_sesi = strtolower(str_replace(' ', '%20', $uploadsData['nama']));
+	
+					// Redirect ke halaman showVideo yang sesuai dengan kelas dan nama sesi
+					redirect("http://localhost/learnify/guru/showVideo{$kelas}/{$nama_sesi}");
+				} else {
+					echo "Gagal menambahkan komentar. Data siswa tidak ditemukan.";
+				}
+			} else {
+				echo "Gagal menambahkan komentar. Data siswa atau kolom yang diperlukan kosong.";
+			}
+		}
 	}
+    public function halaman_video()
+    {
+        $kelas = '*';
+        $id = '*';
+		$kelas ='*';
+		$nama_hafalan ='*';
+		$nama ='*';
+		$email='*';
+
+        $videoDetail = $this->video_model->getVideoDetail($id, $kelas, $nama_hafalan, $nama, $email);
+
+        if ($videoDetail) {
+            echo "Video Title: " . $videoDetail->nama_hafalan;
+        } else {
+            echo "Video not found!";
+        }
+    }
+	public function getVideoDetails($nama, $kelas, $nama_hafalan, $email) {
+		// Mengambil informasi video berdasarkan ID video
+		$id = $this->input->post('id');
+	
+		// Panggil model untuk mendapatkan detail video
+		$this->load->model('Video_model');
+		$video_detail = $this->Video_model->getVideoDetail($id, $kelas, $nama_hafalan, $nama, $email);
+	
+		return $video_detail;
+	}
+	
     public function add_materi()
 
     {
@@ -105,8 +247,6 @@ class Guru extends CI_Controller
             redirect(base_url('guru'));
         }
     }
-	
-
     private function _uploadImage()
     {
         $config['upload_path'] = './assets/materi_video';

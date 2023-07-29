@@ -1,7 +1,9 @@
 <?php
-class Comments_model extends CI_Model {
-    public function addComment($data) {
-        $this->db->insert('comments', $data);
-    }
+class comments_model extends CI_Model{
+public function getComments($kelas)
+{
+    $this->db->where('kelas', $kelas);
+    $query = $this->db->get('komentar');
+    return $query->result();
 }
-
+}
