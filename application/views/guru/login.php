@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Learnify - Teacher Login</title>
+    <title>Login ustadz</title>
 
     <!-- General CSS Files -->
-    <link rel="icon" href="<?= base_url('assets/') ?>img/favicon.png" type="image/png">
+    <link rel="icon" href="<?= base_url('assets/') ?>img/logom.png" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -29,7 +29,7 @@
             <div class="d-flex flex-wrap align-items-stretch">
                 <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
                     <div class="p-4 m-3">
-                        <a href="<?= base_url('welcome') ?>"> <img src="<?= base_url('assets/') ?>/img/logo.png" alt="logo" width="150" class=" mb-5 mt-2"></a>
+                        <a href="<?= base_url('welcome') ?>"> <img src="<?= base_url('assets/') ?>/img/kiki.png" alt="logo" width="150" class=" mb-5 mt-2"></a>
                         <h4 class="text-dark font-weight-normal">Selamat datang di <span class="font-weight-bold">TPQ Muslimat Al-Quthubi</span>
                         </h4>
                         <p class="text-muted">Sebelum masuk ke halaman ustadz, anda harus login terlebih dahulu sebagai
@@ -52,16 +52,16 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="form-group text-right">
-                                <button type="submit" class="btn btn-block btn-success btn-lg btn-icon icon-right" tabindex="4">
-                                    Masuk
-                                </button>
-								<a class="navbar-brand logo_h" href="<?= base_url('account/lupa_password') ?>">lupa password</a>
-                            </div>
+							<div class="form-group text-right">
+							<button type="submit" class="btn btn-block btn-success btn-lg btn-icon icon-right" tabindex="4" style="background-color: orange; color: white;">
+								Masuk
+							</button>
+							<a class="navbar-brand logo_h" style=" color: orange;" href="<?= base_url('account/lupa_password') ?>">lupa password </a>
+						</div>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<?= base_url('assets/') ?>stisla-assets/img/unsplash/masjid.jpg">
+                <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<?= base_url('assets/') ?>img/kegiatan.jpg">
                     <div class="absolute-bottom-left index-2">
                         <div class="text-light p-5 pb-2">
                             <div class="mb-5 pb-3">
@@ -70,7 +70,7 @@
                                     masuk ke
                                     halaman ustadz.</h5>
                             </div>
-                            Made with <span class="text-danger"> &#10084;</span> by <a class="text-light bb" target="_blank" href="https://syauqizaidan.github.io/">Gusti robbani</a> - Image by <a class="text-light bb" target="_blank" href="https://unsplash.com">Unsplash</a>
+                            Made with <span class="text-danger"> &#10084;</span> by <a class="text-light bb" target="_blank" href="">Gusti robbani</a> - Image by <a class="text-light bb" target="_blank" href="https://unsplash.com">Unsplash</a>
                         </div>
                     </div>
                 </div>

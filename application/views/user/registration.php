@@ -1,12 +1,14 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="<?= base_url('assets/') ?>img/favicon.png" type="image/png">
-    <title>Learnify - Belajar Dimana Saja & Kapan Saja!</title>
+    <meta content="Learnify dibuat ditujukan agar para siswa dan guru dapat terus belajar dan mengajar dimana saja dan kapan saja." name="Description" />
+    <meta content="Learnify, E-learning, Open Source, Gusti robbani, github, programmer indonesia" name="keywords" />
+    <link rel="icon" href="<?= base_url('assets/') ?>img/logom.png" type="image/png">
+    <title>e-learning ramah anak</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>vendors/linericon/style.css">
@@ -21,32 +23,54 @@
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=FontName&display=swap" rel="stylesheet">
     <!-- Scripts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
+	<!-- Icon Font Stylesheet -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- Libraries Stylesheet -->
+	<link href="<?php echo base_url('assets/css/animate.min.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/css/owlcarousel/'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/css/owl.carousel.min.css'); ?>" rel="stylesheet">
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+	<!-- Template Stylesheet -->
+	<link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.4/dist/sweetalert2.all.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/jquery-3.3.1.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/popper.js"></script>
     <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.1/lottie.min.js"></script>
-    <script src="<?= base_url('assets/') ?>js/lottie.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="<?php echo base_url('assets/js/wow.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/easing.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/waypoints.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/owlcarousel'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/owl.carousel.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
+	
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $("#nav<?= $this->uri->segment(2); ?>").addClass('active')
+        })
+    </script>
+
 </head>
 
-<body style="background-color: #edf2f7">
-    <!-- Header Menu Area -->
-    <header class="header_area" style="background-color: white !important;">
+<body>
+
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <ul class="list header_social">
-                        <li><a href="https://www.facebook.com/gustii.rb.7"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://dribbble.com/gusti-123"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="https://www.behance.net/"><i class="fa fa-behance"></i></a></li>
-                        <li><a href="https://www.github.com/Gustirobbani"><i class="fa fa-github"></i></a></li>
-                        <li><a href="https://www.instagram.com/gustirobbanii"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <div class="float-right">
-                    <a class="dn_btn" href="mailto:apps.learnify@gmail.com">tpqal-quhtubi@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -54,7 +78,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="<?= base_url('welcome') ?>"><img src="<?= base_url('assets/') ?>img/logo.png" alt=""></a>
+                    <a class="navbar-brand logo_h" href="<?= base_url('welcome') ?>"><img src="<?= base_url('assets/')?>img/kiki.png" alt="">Al-quthubi</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -66,9 +90,6 @@
                             <li class="nav-item" id="nav"><a class="nav-link" href="<?= base_url('welcome') ?>">Beranda</a></li>
                             <li class="nav-item" id="navtentang"><a class="nav-link" href="<?= base_url('welcome/tentang') ?>">Tentang</a>
                             </li>
-                            <li class="nav-item submenu dropdown" id="navpelajaran">
-                                <a href="<?= base_url('welcome/pelajaran') ?>" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pelajaran</a>
-                            </li>
                             <li class="nav-item" id="navkontak"><a class="nav-link" href="<?= base_url('welcome/kontak') ?>">Kontak</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Masuk</a></li>
@@ -78,7 +99,7 @@
             </nav>
         </div>
     </header>
-    <!-- End Header Menu Area  -->
+    <!--================ END Header Menu Area =================-->
 
     <!-- Home Banner Area  -->
     <section class="banner_area">
@@ -100,19 +121,20 @@
     <!-- End Home Banner Area  -->
 
     <!-- Registration Form Area -->
-		<div class="container mt-5 mb-5" id="registration">
-		<div class="row bg-registration p-3">
-			<div class="col-md-12 text-center">
-				<p class="registration-title font-weight-bold display-4 mt-4" style="font-size: 50px;">
-					Pendaftaran Santri</p>
-				<p style="line-height:-30px;margin-top:-20px;">Silahkan isi data data yang diperlukan dibawah ini </p>
-				<hr>
-			</div>
-			<div class="col-md-6 mx-auto text-center">
-				<div class="bodymovin" data-icon="<?= base_url('assets/') ?>json/registration-animation.json"></div>
-			</div>
-			<div class="col-md-6 mx-auto my-auto mt--5">
-				<form action="<?= base_url('user/registration_act') ?>" method="post" onsubmit="return validateForm();">
+	<div class="container mt-5 mb-5" id="registration">
+    <div class="row bg-registration p-3">
+        <div class="col-md-12 text-center">
+            <p class="registration-title font-weight-bold display-4 mt-4" style="font-size: 50px;">
+                Pendaftaran Santri</p>
+            <p style="line-height: -30px; margin-top: -20px;">Silahkan isi data data yang diperlukan dibawah ini </p>
+            <hr>
+        </div>
+        <div class="col-md-6 mx-auto text-center">
+            <!-- Add the image here -->
+            <img src="<?= base_url('assets/img/banner5.jpg') ?>" class="img-fluid" alt="Image">
+        </div>
+        <div class="col-md-6 mx-auto my-auto mt--5">
+            <form action="<?= base_url('user/registration_act') ?>" method="post" onsubmit="return validateForm();">
 					<div class="form-group">
 						<label for="nama_lengkap" class="label-font-register">Nama lengkap</label>
 						<input type="text" autocomplete="off" class="form-control effect-9" name="nama" id="nama_lengkap" value="<?= set_value('nama'); ?>">
@@ -151,7 +173,7 @@
 						</label>
 					</div>
 					<p class="terms">Dengan mendaftar anda menyetujui <i>privasi dan persyaratan ketentuan hukum kami </i></p>
-					<button type="submit" name="submit" id="btnsubmit" disabled class="btn btn-block btn-modal btn-submit">Daftar Sekarang!</button>
+				    <button type="submit" name="submit" id="btnsubmit" disabled class="btn btn-block font-weight-bold btn-modal btn-submit" style="background-color: orange; color: white; font-size: 18px;">Daftar Sekarang!</button>
 				</form>
 			</div>
 		</div>
@@ -171,4 +193,4 @@
             }
         });
     </script>
-    <!-- End Checkbox Scripts -->
+    <!--  -->

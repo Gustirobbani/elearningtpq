@@ -1,12 +1,10 @@
-<IfModule authz_core_module>
+# Apache 2.4 atau lebih baru
+<IfModule mod_authz_core.c>
     Require all denied
 </IfModule>
-<IfModule !authz_core_module>
+
+# Apache sebelum versi 2.4
+<IfModule !mod_authz_core.c>
     Deny from all
 </IfModule>
 
-# File: .htaccess
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]

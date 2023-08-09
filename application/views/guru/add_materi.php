@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Learnify - Tambah Materi</title>
+    <title>Tambah Materi</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -101,7 +101,7 @@
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/logom.png" />
 </head>
 
 <!-- end::Head -->
@@ -117,7 +117,7 @@
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="<?=base_url('guru')?>">
-                <img alt="Logo" src="<?=base_url('assets')?>/img/logo.png" width="90px;" />
+                <img alt="Logo" src="<?=base_url('assets')?>/img/kiki.png" width="90px;" />
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -142,7 +142,7 @@
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="<?=base_url('guru')?>">
-                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/favicon.png" />
+                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/logom.png" />
                         </a>
                     </div>
                 </div>

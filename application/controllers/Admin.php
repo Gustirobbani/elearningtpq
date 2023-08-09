@@ -167,6 +167,32 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('success-edit', 'berhasil');
         redirect('admin/data_guru');
     }
+	public function kelasA()
+    {
+        $data['user'] = $this->db->get_where('materi', ['kelas' =>
+            $this->session->userdata('email')])->row_array();
+
+        $this->load->view('user/kelasA');
+        $this->load->view('template/footer');
+    }
+
+    public function kelasB()
+    {
+        $data['user'] = $this->db->get_where('materi', ['kelas' =>
+            $this->session->userdata('kelas')])->row_array();
+
+        $this->load->view('user/kelasB');
+        $this->load->view('template/footer');
+    }
+
+    public function kelasC()
+    {
+        $data['user'] = $this->db->get_where('materi', ['kelas' =>
+            $this->session->userdata('kelas')])->row_array();
+
+        $this->load->view('user/kelasC');
+        $this->load->view('template/footer');
+    }
 
     public function update_materi($id)
     {
@@ -282,6 +308,10 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim|min_length[1]', [
             'required' => 'Harap isi kolom deskripsi.',
             'min_length' => 'deskripsi terlalu pendek.',
+        ]);
+		$this->form_validation->set_rules('upload', 'upload', 'required|trim|min_length[4]', [
+            'required' => 'Harap isi kolom NIP.',
+            'min_length' => 'NIP terlalu pendek.',
         ]);
         if ($this->form_validation->run() == false) {
             $this->load->view('admin/add_materi');

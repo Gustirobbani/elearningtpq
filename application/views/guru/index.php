@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Learnify - Teacher Page</title>
+    <title>Halaman Ustadz</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -100,7 +100,7 @@
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/logom.png" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.0/dist/sweetalert2.all.min.js"></script>
 </head>
 
@@ -117,7 +117,7 @@
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="<?=base_url('guru/add_materi')?>">
-                <img alt="Logo" src="<?=base_url('assets')?>/img/logo.png" width="90px;" />
+                <img alt="Logo" src="<?=base_url('assets')?>/img/kiki.png" width="90px;" />
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -142,7 +142,7 @@
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="<?=base_url('guru')?>">
-                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/favicon.png" />
+                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/logom.png" />
                         </a>
                     </div>
                 </div>
@@ -364,11 +364,11 @@ echo $data['user']['nama_guru'];
 $data['user'] = $this->db->get_where('guru', ['email' =>
     $this->session->userdata('email')])->row_array();
 echo $data['user']['nama_guru'];
-?> !
+?> 
                                             </h1>
                                             <div class="kt-widget19__shadow"></div>
                                             <div class="kt-widget19__labels">
-                                                <a href="#" class="btn btn-label-light-o2 btn-bold btn-sm ">Learnify</a>
+                                                <a href="#" class="btn btn-label-light-o2 btn-bold btn-sm ">TPQ Muslimat Al-Quthubi</a>
                                             </div>
                                         </div>
                                     </div>
@@ -389,11 +389,11 @@ echo $data['user']['nama_guru'];
                                                 </div>
                                             </div>
                                             <div class="kt-widget19__text">
-                                                Selamat datang di halaman guru Learnify, anda dapat menambah materi .
+                                                Selamat datang di halaman ustadz, anda dapat menambah materi .
                                                 Dalam materi anda dapat memasukan video, dan deskripsi nya. Seemoga anda
-                                                dapat menikmati Learnify!, kontak Administrator jika terjadi masalah
+                                                dapat menikmati, kontak Administrator jika terjadi masalah
                                                 apapun yang terkait upload materi. Terima kasih telah menggunakan
-                                                learnify!
+                                                e-learning!
                                                 <br>
                                                 Selamat Bekerja :)
                                             </div>

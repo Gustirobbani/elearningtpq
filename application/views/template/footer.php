@@ -13,76 +13,83 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
 
 
 <!--================ Start footer Area  =================-->
-<footer class="footer-area p_60">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2  col-md-6 col-sm-6">
-                <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Tentang Kami</h6>
-                    <ul class="list">
-                        <li><a href="<?= base_url('welcome/tentang') ?>">Tentang Learnify</a></li>
-                        <li><a href="<?= base_url('welcome/materi') ?>">Materi Learnify</a></li>
-                        <li><a href="<?= base_url('welcome/kontak') ?>">Kontak Learnify</a></li>
-                        <li><a href="http://smkn1ciamis.id/">Website Resmi TPQ Muslimat AL-Quthubi</a></li>
-                    </ul>
+<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Tentang</h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Kyai Quthub, Tegal</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>085842038004</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>tpqquthubi@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Photo Gallery</h3>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="<?= base_url('assets/') ?>img/banner5.jpg" alt="" />
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="<?= base_url('assets/') ?>img/kegiatan.jpg" alt="" />
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="<?= base_url('assets/') ?>img/kegiatan2.jpg" alt="" />
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="<?= base_url('assets/') ?>img/banner.jpg" alt="" />
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="<?= base_url('assets/') ?>img/banner5.jpg" alt="" />
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="<?= base_url('assets/') ?>img/banner4.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">About us</h3>
+                        <p>E-learning ini di buat di tujukan untuk memajukan kegiatan tpq muslimat al-quthubi</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+        
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-2  col-md-6 col-sm-6">
-                <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Masuk - Sign in</h6>
-                    <ul class="list">
-                        <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Untuk Santri</a></li>
-                        <li><a href="<?= base_url('welcome/guru') ?>">Untuk Ustadz</a></li>
-                    </ul>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Gusti robbani</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By Gusti robbani<a class="border-bottom" href="https://htmlcodex.com"></a>
+                            <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2  col-md-6 col-sm-6">
-                <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Pelajaran - Materi</h6>
-                    <ul class="list">
-                        <li><a href="javaScript:void(0);">Bacaan Sholat</a></li>
-                        <li><a href="javaScript:void(0);">Doa Harian</a></li>
-                        <li><a href="javaScript:void(0);">Ilmu Tajwid</a></li>
-                        <li><a href="javaScript:void(0);">Surah Pendek</a></li>
-                        <li><a href="javaScript:void(0);">Hafalan</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2  col-md-6 col-sm-6">
-                <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Tentang Developer</h6>
-                    <ul class="list">
-                        <li>Saya adalah mahasiswa tingkat akhir yang di beri kehormatan untuk membuatkan webiste untuk anak-anak tpq yang saya harapkan dapat mencetak generasi bangsa yang lebih baik</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <h4 class="footer_title">Tentang Learnify</h4>
-                <p>
-				Learnify adalah Web E-learning yang dibuat oleh Gusti robbani. Website pembelajaran dimana para santri tpq muslimat al-quthubi bisa belajara secara online, Learnify dapat diakses dimana saja dan kapan saja
-                </p>
             </div>
         </div>
-        <div class="row footer-bottom d-flex justify-content-between align-items-center">
-            <p class="col-lg-8 col-md-8 footer-text m-0">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>
-                    document.write(new Date().getFullYear());
-                </script> All rights reserved | This template is made with <span class="text-danger"> &#10084;</span> by
-                <a href="https://colorlib.com" target="_blank">Colorlib</a> <br> Learnify is made with <span class="text-danger"> &#10084;</span> by <a href="https://github.com/syauqi">Gusti robbani </a> 
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            <div class="col-lg-4 col-md-4 footer-social">
-                <a href="https://web.facebook.com/gustii.rb.7"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
-                <a href="https://dribbble.com/gusti_123"><i class="fa fa-dribbble"></i></a>
-                <a href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
-                <a href="https://github.com/Gustirobbani"><i class="fa fa-github"></i></a>
-                <a href="https://www.instagram.com/gustirobbanii/"><i class="fa fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
 <!--================ End footer Area  =================-->
 
 
@@ -92,7 +99,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title text-dark font-weight-bold" style="color:#212529 !important;" id="exampleModalCenterTitle">
-                    Learnify - Masuk Sekarang</h2>
+                    Login Santri</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -102,7 +109,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                     <br>
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <img src="<?= base_url('assets/'); ?>img/modal-login-2.png" class="img-fluid img-responsive mx-auto " style="height: 350px;">
+                            <img src="<?= base_url('assets/'); ?>img/banner5.jpg" class="img-fluid img-responsive mx-auto " style="height: 350px;">
                         </div>
                         <div class=" col-md-6">
                             <form action="<?= base_url('welcome/validateLogin') ?>" method="post">
@@ -133,10 +140,8 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                     belum punya akun? daftar <a href=" <?= base_url('user/registration') ?>">
                                         disini.</a>
                                 </p>
-                                <button class="btn btn-block font-weight-bold" style="background-color: #4dbf1c;color:white;font-size:18px;">Login
-                                    Sekarang!</button>
-									<a class="navbar-brand logo_h" href="<?= base_url('account/lupa_password') ?>" style="color: green;">lupa password</a>
-
+								<button class="btn btn-block font-weight-bold" style="background-color: orange; color: white; font-size: 18px;">Login Sekarang!</button>
+								<a class="navbar-brand logo_h" href="<?= base_url('account/lupa_password') ?>" style="color: orange;">lupa password</a>
                             </form>
                         </div>
                     </div>
@@ -146,128 +151,6 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     </div>
 </div>
 <!-- End Login Modal -->
-
-
-<!-- Sweetaler Flashdata -->
-<?php if ($this->session->flashdata('success-reg')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Kamu berhasil daftar!',
-            text: 'Sekarang kamu boleh login!',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('login-success')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Kamu berhasil daftar!',
-            text: 'Sekarang login yuk!',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('succes-reset')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Kamu berhasil mengganti password!',
-            text: 'Sekarang login yuk!',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('success-upload')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Upload Sukses!',
-            text: 'Silahkan Menunggu Review!',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('success-logout')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Kamu berhasil logout!',
-            text: 'Selamat tinggal, Sampai jumpa lagi!',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('fail-login')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Gagal login!',
-            text: 'Silahkan Periksa Kembali Email dan Password Kamu!',
-            showConfirmButton: false,
-            timer: 2500
-        });
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('fail-email')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Email Belum Diverifikasi!',
-            text: 'Silahkan Cek Email Kamu Dahulu!',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('fail-pass')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Password Salah!',
-            text: 'Silahkan Periksa Kembali Password Kamu!',
-            showConfirmButton: false,
-            timer: 2500
-        });
-    </script>
-<?php endif; ?>
-
-
-<?php if ($this->session->flashdata('not-login')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Harap Login Terlebih Dahulu !',
-            text: 'Silahkan Login Dahulu !',
-            showConfirmButton: false,
-            timer: 2500
-        });
-    </script>
-<?php endif; ?>
-<?php if ($this->session->flashdata('false-login')) : ?>
-    <script>
-        $("#exampleModalCenter").modal("show")
-    </script>
-<?php endif; ?>
 
 <script src="<?= base_url('assets/') ?>js/stellar.js"></script>
 <script src="<?= base_url('assets/') ?>vendors/lightbox/simpleLightbox.min.js"></script>

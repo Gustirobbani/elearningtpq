@@ -6,7 +6,7 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
+        $this->load->library('Form_validation');
     	$this->load->model('m_siswa');
       //  $this->session->set_flashdata('not-login', 'Gagal!');
         //if (!$this->session->userdata('email')) {
@@ -56,12 +56,13 @@ class User extends CI_Controller
     }
 
     public function registration_act()
-    {
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[4]|callback_check_nama', [
-			'required' => 'Harap isi kolom nama.',
-			'min_length' => 'Nama terlalu pendek.',
-			'check_nama' => 'Nama ini telah digunakan!'
-		]);
+{
+    $this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[4]|callback_check_alpha_only|callback_check_nama', [
+        'required' => 'Harap isi kolom nama.',
+        'min_length' => 'Nama terlalu pendek.',
+        'check_alpha_only' => 'Kolom Nama hanya boleh diisi dengan huruf.',
+        'check_nama' => 'Nama ini telah digunakan!'
+	]);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[siswa.email]', [
             'is_unique' => 'Email ini telah digunakan!',
             'required' => 'Harap isi kolom email.',
@@ -162,6 +163,15 @@ class User extends CI_Controller
         return true;
     }
 }
+public function check_alpha_only($str)
+{
+    if (!preg_match('/^[a-zA-Z ]+$/', $str)) {
+        $this->form_validation->set_message('check_alpha_only', 'Kolom {field} hanya boleh diisi dengan huruf.');
+        return false;
+    }
+    return true;
+}
+
 }
 	
 

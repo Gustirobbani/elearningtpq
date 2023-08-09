@@ -5,7 +5,6 @@
         </div>
         <div class="container">
             <div class="banner_content text-center">
-                <h2 data-aos="fade-up" data-aos-duration="1600">Tentang Tpq Muslimat Al-Quthubi</h2>
                 <div data-aos="fade-up" data-aos-duration="1800" class="page_link">
                     <a href="<?= base_url('welcome') ?>">Beranda</a>
                     <a href="">Tentang</a>
@@ -20,8 +19,8 @@
 <section class="about_area p_60">
     <div class="container">
         <div class="main_title">
-            <h2 data-aos="fade-up" data-aos-duration="1600" style="font-size: 33px !important;">Tentang e-learning - Web e-learning TPQ Muslimat Al-quthubi</h2>
-            <p data-aos="fade-up" data-aos-duration="1800">Learnify adalah Web E-learning yang dibuat oleh Gusti robbani.
+            <h2 data-aos="fade-up" data-aos-duration="1600" style="font-size: 33px !important;">Tentang e-learning</h2>
+            <p data-aos="fade-up" data-aos-duration="1800">E-learning adalah Web E-learning yang dibuat oleh Gusti robbani.
  Website
                 pembelajaran dimana para santri tpq muslimat al-quthubi dapat belajar dimana saja dan kapan saja.
                 Ustadz dapat mengupload video dirinya sendiri sedang mengajar, sehingga tanpa takut adanya jam
@@ -92,9 +91,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="video_area" id="video">
-                    <img class="img-fluid" src="<?= base_url('assets/') ?>img/tpq (1).jpg" alt="" />
-                    <a class="popup-youtube" href="https://youtu.be/YwVa6HdNITo">
-                        <img src="<?= base_url('assets/') ?>img/icon/video-icon-1.png" alt="" />
+                    <img class="img-fluid" src="<?= base_url('assets/') ?>img/banner5.jpg" alt="" />
+                        <img src="<?= base_url('assets/') ?>" alt="" />
                     </a>
                 </div>
             </div>
@@ -108,75 +106,29 @@
 </section>
 <!--================End About Area =================-->
 
-<!--================Team Area =================-->
-<section class="team_area p_20">
-    <div class="container">
-        <div class="main_title">
-            <h2 data-aos="fade-up" data-aos-duration="1800">Testimonial Para Santri dan Ustadz TPQ Muslimat Al-Quthubi</h2>
-            <p data-aos="fade-up" data-aos-duration="2000"></p>
-        </div>
-        <section class="testimonials_area p_20">
+
+<!--================End Team Area =================-->
+
+<!--================Impress Area =================-->
+<div class="container-xxl py-5">
             <div class="container">
-                <div class="testi_slider owl-carousel">
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
-                            <h4>Ust. Sultan Abdial Haq</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>Dengan adanya e-learning berbasis website untuk tpq muslimat al-quthubi sangat bisa membantu akan proses jalannya pembelajaran di tpq ini"</p>
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <img class="position-absolute w-100 h-100 rounded" src="<?= base_url('assets/') ?>img/banner4.jpg" alt="" style="object-fit: cover;"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
-                            <h4>Taupik Hidayat</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>"Kami selaku wali santri di tpq muslimat al-quthubi sangat bersyukur dengan adanya kemajuan pembelajaran di tpq ini dan kita sebagai orang tua dapat selalu mengawasi anak-anak dalam proses pembelajaran"</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
-                            <h4>Diki Ramdani</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>"Saya sebagai salah satu santri di tpq ini merasa lebih mudah memahami pelajaran yang di jelaskan oleh ustadz melalui video pembelajaran yang bisa di akses melalui website ini"
-                            </p>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Login sebagain ustadz</h1>
+                                <p class="mb-4">Login sebagai ustadz dan berikan Pembelajaranyang menarik bagi para santri Tpq Muslimat Al-Quthubi
+                                </p>
+                                <a class="btn btn-primary py-3 px-5" href="<?= base_url('welcome/guru') ?>">Login ustadz<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-</section>
-<!--================End Team Area =================-->
-
-<!--================Impress Area =================-->
-<section class="impress_area p_120">
-    <div class="container">
-        <div class="impress_inner text-center">
-            <h2 data-aos="fade-up" data-aos-duration="1800">LOGIN SEBAGAI USTADZ DAN UPLOAD MATERI & VIDEO</h2>
-            <p data-aos="fade-up" data-aos-duration="2000">Masuk sebagai ustadz untuk memberikan materi yang sudah di persiapkan untuk pembelajaran para santri
-            </p>
-            <a data-aos="fade-up" data-aos-duration="2200" class="main_btn" href="<?= base_url('welcome/guru') ?>">Login Sebagai Guru <span class="lnr lnr-arrow-right text-black"></span></a>
         </div>
-    </div>
-</section>
 <!--================End Impress Area =================-->

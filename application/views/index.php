@@ -1,251 +1,107 @@
 <!--================Home Banner Area =================-->
-<section class="home_banner_area">
-	<div class="banner_inner d-flex align-items-center">
-		<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="">
-		</div>
-		<div class="container">
-			<div class="banner_content text-center">
-				<h3 data-aos="fade-up" data-aos-duration="1600">E-Learning Ramah Anak<br /> TPQ Muslimat Al-Quthubi</h3>
-				<p data-aos="fade-up" data-aos-duration="1900">Dengan Learnify kemudahan kegiatan belajar mengajar dapat terpenuhi. Para ustadz dan santri dapat
-					belajar meski banyak halangan atau rintangan. Nikmati Pembelajaran terstruktur dan efektif menggunakan Learnify serta kemudahan belajar dengan menggunakan aplikasi kami. </p>
-				<a data-aos="fade-up" data-aos-duration="2000" class="main_btn" href="<?= base_url('user/registration') ?>#registration">Daftar Sekarang <span class="lnr lnr-arrow-right"></span></a>
-			</div>
-		</div>
-	</div>
+<section class="home_banner_area" style="background-image: url('assets/img/banner.jpg'); background-size: cover; background-position: center center;">
+    <div class="banner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0">
+        </div>
+        <div class="container">
+            <div class="banner_content text-center">
+                <div style="background-color: #f7f7f7; padding: 80px; display: block; width: 100%; margin-bottom: 50px; margin-top: 50px;">
+				<h3 data-aos="fade-up" data-aos-duration="1600" style="font-size: 40px;">E-Learning Ramah Anak<br /> TPQ Muslimat Al-Quthubi</h3>
+                <p data-aos="fade-up" data-aos-duration="1900">Dengan kemudahan kegiatan belajar mengajar dapat terpenuhi. Para ustadz dan santri dapat belajar meski banyak halangan atau rintangan. Nikmati Pembelajaran terstruktur dan efektif serta kemudahan belajar dengan menggunakan aplikasi kami.</p>
+                    <a class="btn btn-primary py-3 px-5" style="background-color: orange; color: #fff;" href="<?= base_url('user/registration') ?>#registration">Pendaftaran <span class="lnr lnr-arrow-right"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- ================End Home Banner Area ================= -->
+        <!-- Facilities Start -->
+       <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Kelebihan E-learning</h1>
+            <p></p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="facility-item">
+                    <div class="facility-icon bg-primary">
+                        <span class="bg-primary"></span>
+                        <i class="fa fa-book fa-3x text-primary"></i>
+                        <span class="bg-primary"></span>
+                    </div>
+                    <div class="facility-text bg-primary">
+                        <h3 class="text-primary mb-3">Admin, Santri & Ustadz Data Management</h3>
+                        <p class="mb-0">Kemudahan dalam mengelola Pembelajaran ataupun dari data santri</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="facility-item">
+                    <div class="facility-icon bg-success">
+                        <span class="bg-success"></span>
+                        <i class="fa fa-futbol fa-3x text-success"></i>
+                        <span class="bg-success"></span>
+                    </div>
+                    <div class="facility-text bg-success">
+                        <h3 class="text-success mb-3">E-Learning Berbasis Video dan Disqus</h3>
+                        <p class="mb-0">Memberikan pengalaman Pembelajaran yang menyenangkan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="facility-item">
+                    <div class="facility-icon bg-warning">
+                        <span class="bg-warning"></span>
+                        <i class="fa fa-home fa-3x text-warning"></i>
+                        <span class="bg-warning"></span>
+                    </div>
+                    <div class="facility-text bg-warning">
+                        <h3 class="text-warning mb-3">Dokumentasi Lengkap & Jelas</h3>
+                        <p class="mb-0">Dengan Dokumentasi yang lengkap akan lebih memudahkan bagi para santri ataupun ustadz</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="facility-item">
+                    <div class="facility-icon bg-info">
+                        <span class="bg-info"></span>
+                        <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                        <span class="bg-info"></span>
+                    </div>
+                    <div class="facility-text bg-info">
+                        <h3 class="text-info mb-3">Mudah, Ramah Anak</h3>
+                        <p class="mb-0">Dapat digunakan dengan mudah dan mudah dipahami</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!--================Finance Area =================-->
-<section class="finance_area">
-	<div class="container">
-		<div class="finance_inner row">
-			<div class="col-lg-3 col-sm-6">
-				<div class="finance_item">
-					<div data-aos="fade-right" data-aos-duration="1600" class="media">
-						<div class="d-flex">
-							<i class="lnr lnr-users"></i>
-						</div>
-						<div class="media-body">
-							<h5>Admin, Santri & Ustadz Data Management</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6">
-				<div class="finance_item">
-					<div data-aos="fade-right" data-aos-duration="1800" class="media">
-						<div class="d-flex">
-							<i class="lnr lnr-file-empty"></i>
-						</div>
-						<div class="media-body">
-							<h5>Dokumentasi lengkap & Jelas</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div data-aos="fade-right" data-aos-duration="2000" class="col-lg-3 col-sm-6">
-				<div class="finance_item">
-					<div class="media">
-						<div class="d-flex">
-							<i class="lnr lnr-camera-video"></i>
-						</div>
-						<div class="media-body">
-							<h5>E-Learning Berbasis Video dan Disqus</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div data-aos="fade-right" data-aos-duration="2200" class="col-lg-3 col-sm-6">
-				<div class="finance_item">
-					<div class="media">
-						<div class="d-flex">
-							<i class="lnr lnr-tag"></i>
-						</div>
-						<div class="media-body">
-							<h5>Mudah, Ramah Anak </h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--================End Finance Area =================-->
+        <!-- Facilities End -->
 
-<!--================ Illustrations Area =================-->
-<section class="learnify-for-indonesia p_20">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 mx-auto">
-				<img data-aos="fade-up" data-aos-duration="1800" src="<?= base_url('assets/') ?>img/illustrations/index-study.svg" alt="" srcset="">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-7 mx-auto">
-				<div class="main_title">
-					<h2 data-aos="fade-up" data-aos-duration="2000">E-Learning di buat untuk meningkatkan kualitas pendidikan TPQ di Indonesia</h2>
-					<p data-aos="fade-up" data-aos-duration="2200">Web e-learning ini di buat khusus untuk TPQ Muslimat Al-Quthubi untuk meningkatkan pembelajaran yang sudah ada di TPQ Tersebut</p>
-					<a href="https://youtu.be/UOI51jJ6dw0"><button data-aos="fade-up" data-aos-duration="2400" class="bubbly-button">Lihat Kegiatan TPQ <span class="lnr lnr-arrow-right"></span></button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--================End Illustrations Area =================-->
+        <!-- Call To Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <img class="position-absolute w-100 h-100 rounded" src="assets/img/banner4.jpg" style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Login sebagain ustadz</h1>
+                                <p class="mb-4">Login sebagai ustadz dan berikan Pembelajaranyang menarik bagi para santri Tpq Muslimat Al-Quthubi
+                                </p>
+                                <a class="btn btn-primary py-3 px-5" href="<?= base_url('welcome/guru') ?>">Login ustadz<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call To Action End -->
 
-<!--================Courses Area =================-->
-<section class="courses_area p_40">
-	<div class="container">
-		<div class="main_title">
-			<h2 data-aos="fade-up" data-aos-duration="1600">Pelajaran Yang Tersedia di Learnify</h2>
-			<p data-aos="fade-up" data-aos-duration="1800">Ada beberapa mata pelajaran yang sudah ada, di buat dalam bentuk e-learning agar memudahkan para santri maupun wali santri untuk mengetahui proses pembelajaran yang ada di TPQ.</p>
-		</div>
-		<div class="row courses_inner">
-			<div class="col-lg-9">
-				<div class="grid_inner">
-					<div class="grid_item wd55">
-						<div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
-							<img src="<?= base_url('assets/') ?>img/courses/course-1.jpg" alt="">
-							<div class="hover_text">
-							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
-								<a href="javaScript:void(0);">
-									<h4>Kelas Ilmu Tajwid</h4>
-								</a>
-								<ul class="list">
-									<li><a href="#"><i class="lnr lnr-users"></i>13</a></li>
-									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i>TPQ Muslimat Al-Quthubi</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="grid_item wd44">
-						<div class="courses_item" data-aos="fade-down" data-aos-duration="1800">
-							<img src="<?= base_url('assets/') ?>img/courses/course-2.jpg" alt="">
-							<div class="hover_text">
-							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
-								<a href="javaScript:void(0);">
-									<h4>Kelas Aqidah Ahlaq</h4>
-								</a>
-								<ul class="list">
-									<li><a href="#"><i class="lnr lnr-users"></i> 13</a></li>
-									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i>TPQ Muslimat Al-Quthubi</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="grid_item wd44">
-						<div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
-							<img src="<?= base_url('assets/') ?>img/courses/course-4.jpg" alt="">
-							<div class="hover_text">
-							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
-								<a href="javaScript:void(0);">
-									<h4>Kelas Bacaan Sholat</h4>
-								</a>
-								<ul class="list">
-									<li><a href="#"><i class="lnr lnr-users"></i> 13</a></li>
-									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i> TPQ Muslimat Al-Quthubi</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="grid_item wd55">
-						<div class="courses_item" data-aos="fade-up" data-aos-duration="1800">
-							<img src="<?= base_url('assets/') ?>img/courses/course-5.jpg" alt="">
-							<div class="hover_text">
-							<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
-								<a href="javaScript:void(0);">
-									<h4>Kelas Hafalan</h4>
-								</a>
-								<ul class="list">
-									<li><a href="#"><i class="lnr lnr-users"></i> 13</a></li>
-									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i> TPQ Muslimat Al-Quthubi</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="course_item" data-aos="fade-left" data-aos-duration="1800">
-					<img src="<?= base_url('assets/') ?>img/courses/course-3.jpg" alt="">
-					<div class="hover_text">
-					<a class="cat" href="<?php echo base_url('user/registration'); ?>">Daftar</a>
-						<a href="javaScript:void(0);">
-							<h4>Kelas Risalatul Awal</h4>
-						</a>
-						<ul class="list">
-							<li><a href="#"><i class="lnr lnr-users"></i> 13</a></li>
-							<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-							<li><a href="#"><i class="lnr lnr-user"></i> TPQ MUslimat Al-Quthubi</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--================End Courses Area =================-->
-
-<!--================Team Area =================-->
-<section class="team_area p_20">
-	<div class="container">
-		<div class="main_title">
-			<h2 data-aos="fade-up" data-aos-duration="1800">Testimonial Dari Para Santri dan Utadz TPQ Muslimat Al-Quthubi</h2>
-			<p data-aos="fade-up" data-aos-duration="2000">.</p>
-		</div>
-		<section class="testimonials_area p_20">
-			<div class="container">
-				<div class="testi_slider owl-carousel">
-					<div class="item">
-						<div class="testi_item">
-							<img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
-							<h4>Ust. Sultan Abdial Haq</h4>
-							<ul class="list">
-							</ul>
-							<p> "Dengan adanya e-learning berbasis website untuk tpq muslimat al-quthubi sangat bisa membantu akan proses jalannya pembelajaran di tpq ini"</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="testi_item">
-							<img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
-							<h4>Taupik Hidayat</h4>
-							<ul class="list">
-							</ul>
-							<p>"Kami selaku wali santri di tpq muslimat al-quthubi sangat bersyukur dengan adanya kemajuan pembelajaran di tpq ini dan kita sebagai orang tua dapat selalu mengawasi anak-anak dalam proses pembelajaran"</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="testi_item">
-							<img src="<?= base_url('assets/') ?>img/testimonials/" alt="">
-							<h4>Diki Ramdani</h4>
-							<ul class="list">
-							</ul>
-							<p>"Saya sebagai salah satu santri di tpq ini merasa lebih mudah memahami pelajaran yang di jelaskan oleh ustadz melalui video pembelajaran yang bisa di akses melalui website ini"
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-</section>
-<!--================End Team Area =================-->
-
-<!--================Impress Area =================-->
-<section class="impress_area p_120">
-	<div class="container">
-		<div class="impress_inner text-center">
-			<h2 data-aos="fade-up" data-aos-duration="1800">LOGIN SEBAGAI USTADZ DAN UPLOAD MATERI & VIDEO</h2>
-			<p data-aos="fade-up" data-aos-duration="2000">Masuk sebagai ustadz untuk memberikan materi yang sudah di persiapkan untuk pembelajaran para santri
-			</p>
-			<a data-aos="fade-up" data-aos-duration="2200" class="main_btn" href="<?= base_url('welcome/guru') ?>">Login Sebagai Guru <span class="lnr lnr-arrow-right text-black"></span></a>
-		</div>
-	</div>
-</section>
-<!--================End Impress Area =================-->
